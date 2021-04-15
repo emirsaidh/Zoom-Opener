@@ -1,0 +1,119 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WpfApp1.MainWindow"
+        mc:Ignorable="d"
+        Title="Dadash Software" Height="1000" Width="850" >
+    <Grid Margin="0,10,0,-10">
+        <TextBox x:Name="nameText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" AutomationProperties.IsRequiredForForm="True" Cursor="Arrow" Opacity="0.4" Margin="159,24,0,0"/>
+        <TextBlock x:Name="courseNameText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Course Name:" VerticalAlignment="Top" Width="104" Margin="22,25,0,0"/>
+        <TextBox x:Name="linkText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" AutomationProperties.IsRequiredForForm="True" Cursor="Arrow" Opacity="0.4" Margin="159,65,0,0"/>
+        <TextBlock x:Name="zoomLinkText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Zoom Link:" VerticalAlignment="Top" Width="104" Margin="22,66,0,0"/>
+        <TextBox x:Name="passcodeText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" AutomationProperties.IsRequiredForForm="True" Cursor="Arrow" Opacity="0.4" Margin="159,109,0,0"/>
+        <TextBlock x:Name="meetingPasscodeText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Meeting Passcode:" VerticalAlignment="Top" Width="104" Margin="22,110,0,0"/>
+        <Button Content="Add Course" HorizontalAlignment="Left" Margin="22,287,0,0" VerticalAlignment="Top" Width="91" Height="27" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,252,0,0" TextWrapping="Wrap" Text="Start Time:" VerticalAlignment="Top" Width="104"/>
+        <TextBlock x:Name="whichDaysText" HorizontalAlignment="Left" Margin="22,157,0,0" TextWrapping="Wrap" Text="Which days do you have this course:" VerticalAlignment="Top" Width="104"/>
+        <CheckBox x:Name="mondayCheckBox" IsEnabled="True" Checked="mondayCheckedChanged" Unchecked="mondayCheckedChanged" Content="Monday" VerticalAlignment="Top" Margin="179,158,0,0" Width="87" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="tuesdayCheckBox" IsEnabled="True" Checked="tuesdayCheckedChanged" Unchecked="tuesdayCheckedChanged" Content="Tuesday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="301,158,0,0" Width="87"/>
+        <CheckBox x:Name="wednesdayCheckBox" IsEnabled="True" Checked="wednesdayCheckedChanged" Unchecked="wednesdayCheckedChanged" Content="Wednesday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429,157,0,0" Width="87"/>
+        <CheckBox x:Name="thursdayCheckBox" IsEnabled="True" Checked="thursdayCheckedChanged" Unchecked="thursdayCheckedChanged" Content="Thursday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="574,157,0,0" Width="87"/>
+        <CheckBox x:Name="fridayCheckBox" IsEnabled="True" Checked="fridayCheckedChanged" Unchecked="fridayCheckedChanged" Content="Friday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="702,157,0,0" Width="87"/>
+        <ListBox x:Name="mondayListBox" HorizontalAlignment="Left" Height="260" Margin="179,190,0,0" VerticalAlignment="Top" Width="87" FontSize="9" Visibility="Visible">
+            <CheckBox x:Name="monday8" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="08:00 - 08:50"/>
+            <CheckBox x:Name="monday9" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="09:00 - 09:50"/>
+            <CheckBox x:Name="monday10" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="10:00 - 10:50"/>
+            <CheckBox x:Name="monday11" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="11:00 - 11:50"/>
+            <CheckBox x:Name="monday12" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="12:00 - 12:50"/>
+            <CheckBox x:Name="monday13" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="13:00 - 13:50"/>
+            <CheckBox x:Name="monday14" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="14:00 - 14:50"/>
+            <CheckBox x:Name="monday15" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="15:00 - 15:50"/>
+            <CheckBox x:Name="monday16" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="16:00 - 16:50"/>
+            <CheckBox x:Name="monday17" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="17:00 - 17:50"/>
+            <CheckBox x:Name="monday18" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="18:00 - 18:50"/>
+            <CheckBox x:Name="monday19" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="19:00 - 19:50"/>
+            <CheckBox x:Name="monday20" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="20:00 - 20:50"/>
+        </ListBox>
+        <ListBox x:Name="fridayListBox" HorizontalAlignment="Left" Height="260" Margin="702,190,0,0" VerticalAlignment="Top" Width="87" FontSize="9" Visibility="Visible">
+            <CheckBox x:Name="friday8" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="08:00 - 08:50"/>
+            <CheckBox x:Name="friday9" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="09:00 - 09:50"/>
+            <CheckBox x:Name="friday10" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="10:00 - 10:50"/>
+            <CheckBox x:Name="friday11" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="11:00 - 11:50"/>
+            <CheckBox x:Name="friday12" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="12:00 - 12:50"/>
+            <CheckBox x:Name="friday13" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="13:00 - 13:50"/>
+            <CheckBox x:Name="friday14" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="14:00 - 14:50"/>
+            <CheckBox x:Name="friday15" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="15:00 - 15:50"/>
+            <CheckBox x:Name="friday16" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="16:00 - 16:50"/>
+            <CheckBox x:Name="friday17" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="17:00 - 17:50"/>
+            <CheckBox x:Name="friday18" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="18:00 - 18:50"/>
+            <CheckBox x:Name="friday19" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="19:00 - 19:50"/>
+            <CheckBox x:Name="friday20" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="20:00 - 20:50"/>
+        </ListBox>
+        <ListBox x:Name="thursdayListBox" HorizontalAlignment="Left" Height="260" Margin="574,190,0,0" VerticalAlignment="Top" Width="87" FontSize="9" Visibility="Visible">
+            <CheckBox x:Name="thursday8" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="08:00 - 08:50"/>
+            <CheckBox x:Name="thursday9" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="09:00 - 09:50"/>
+            <CheckBox x:Name="thursday10" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="10:00 - 10:50"/>
+            <CheckBox x:Name="thursday11" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="11:00 - 11:50"/>
+            <CheckBox x:Name="thursday12" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="12:00 - 12:50"/>
+            <CheckBox x:Name="thursday13" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="13:00 - 13:50"/>
+            <CheckBox x:Name="thursday14" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="14:00 - 14:50"/>
+            <CheckBox x:Name="thursday15" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="15:00 - 15:50"/>
+            <CheckBox x:Name="thursday16" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="16:00 - 16:50"/>
+            <CheckBox x:Name="thursday17" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="17:00 - 17:50"/>
+            <CheckBox x:Name="thursday18" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="18:00 - 18:50"/>
+            <CheckBox x:Name="thursday19" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="19:00 - 19:50"/>
+            <CheckBox x:Name="thursday20" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="20:00 - 20:50"/>
+        </ListBox>
+        <ListBox x:Name="tuesdayListBox" HorizontalAlignment="Left" Height="260" Margin="301,190,0,0" VerticalAlignment="Top" Width="87" FontSize="9" Visibility="Visible">
+            <CheckBox x:Name="tuesday8" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="08:00 - 08:50"/>
+            <CheckBox x:Name="tuesday9" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="09:00 - 09:50"/>
+            <CheckBox x:Name="tuesday10" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="10:00 - 10:50"/>
+            <CheckBox x:Name="tuesday11" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="11:00 - 11:50"/>
+            <CheckBox x:Name="tuesday12" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="12:00 - 12:50"/>
+            <CheckBox x:Name="tuesday13" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="13:00 - 13:50"/>
+            <CheckBox x:Name="tuesday14" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="14:00 - 14:50"/>
+            <CheckBox x:Name="tuesday15" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="15:00 - 15:50"/>
+            <CheckBox x:Name="tuesday16" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="16:00 - 16:50"/>
+            <CheckBox x:Name="tuesday17" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="17:00 - 17:50"/>
+            <CheckBox x:Name="tuesday18" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="18:00 - 18:50"/>
+            <CheckBox x:Name="tuesday19" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="19:00 - 19:50"/>
+            <CheckBox x:Name="tuesday20" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="20:00 - 20:50"/>
+        </ListBox>
+        <ListBox x:Name="wednesdayListBox" HorizontalAlignment="Left" Height="260" Margin="429,190,0,0" VerticalAlignment="Top" Width="87" FontSize="9" Visibility="Visible">
+            <CheckBox x:Name="wednesday8" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="08:00 - 08:50"/>
+            <CheckBox x:Name="wednesday9" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="09:00 - 09:50"/>
+            <CheckBox x:Name="wednesday10" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="10:00 - 10:50"/>
+            <CheckBox x:Name="wednesday11" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="11:00 - 11:50"/>
+            <CheckBox x:Name="wednesday12" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="12:00 - 12:50"/>
+            <CheckBox x:Name="wednesday13" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="13:00 - 13:50"/>
+            <CheckBox x:Name="wednesday14" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="14:00 - 14:50"/>
+            <CheckBox x:Name="wednesday15" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="15:00 - 15:50"/>
+            <CheckBox x:Name="wednesday16" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="16:00 - 16:50"/>
+            <CheckBox x:Name="wednesday17" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="17:00 - 17:50"/>
+            <CheckBox x:Name="wednesday18" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="18:00 - 18:50"/>
+            <CheckBox x:Name="wednesday19" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="19:00 - 19:50"/>
+            <CheckBox x:Name="wednesday20" IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="20:00 - 20:50"/>
+        </ListBox>
+        <ListView x:Name="listViewCourses" HorizontalAlignment="Left" Height="444" Margin="16,472,0,0" VerticalAlignment="Top" Width="804" RenderTransformOrigin="0.5,0.5">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.01"/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Course Name" Width="150" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Link" Width="150" DisplayMemberBinding="{Binding Link}" />
+                    <GridViewColumn Header="Passcode" Width="150" DisplayMemberBinding="{Binding Passcode}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
